@@ -4,7 +4,6 @@ This app sends a notification to my phone when a team of my choice across the wo
 
 I use twilio's API to hook up to my phone and I scrape the data i need with cheerio from https://livescore.football365.com/football/live.
 
-I use SOLID while making this app, meaning every function should be doing one specfic thing.
 
 The website I use to scrape from is football365.
 
