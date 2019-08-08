@@ -4,10 +4,14 @@ This app sends a notification to my phone when a team of my choice across the wo
 
 I use twilio's API to hook up to my phone and I scrape the data i need with cheerio from https://livescore.football365.com/football/live.
 
+I use SOLID while making this app, meaning every function should be doing one specfic thing.
+
+The website I use to scrape from is football365.
+
 
 ## How it works
 
-1# 
+1# (HOW I GET THE DATA) 
 
 First I have an anonymous function with a set interval function which fires every 1:30 minutes.
 
@@ -24,7 +28,7 @@ If I was to simply send a request to the main endpoint https://livescore.footbal
 access the first 42 live games and does not deal with the infinite scroll.
 
 
-2#  
+2# SORTING THE DATA(LOTS OF REGEX!) 
 
 When I send my post request, I get all the data I need to scrape with and send it through to my next function.
 
@@ -48,7 +52,9 @@ So I need to use a lot of regex logic to format it probably.
 Once I have formated all the data I need, I put it all in an object which I am going to send to my next function!
 
 
-3# 
+
+
+3# (COMPARING GOALSCORER ARRAY)
 
 This next function's job is to wait until a goal has been scored and then send the data to my last function, which actives my whatsapp and sends the data.
 
@@ -79,7 +85,7 @@ So both arrays will be the same length again and will not activate my if stateme
 
 And I also pop of the array when both are equal so there are always two arrays getting compared.
 
-4#
+4#(SEND WHATSAPP MESSAGE)
 
 The last function simply sends the message to my phone when we have the goalscorer data sent from the 3rd funcion,
 and voila I get a notification telling me the latest score and the goalscorers!
